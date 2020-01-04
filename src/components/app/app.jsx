@@ -1,10 +1,13 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import WelcomeScreen from "../welcome-screen/welcome-screen.jsx";
 
-const App = () => {
+const App = (props) => {
+  const {gameTime, errorCount} = props;
+
   return <WelcomeScreen
-    time={5}
-    errorCount={3}
+    time={gameTime}
+    errorCount={errorCount}
   />;
 };
 

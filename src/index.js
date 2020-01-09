@@ -1,20 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/app/app.jsx";
+import questions from "./mocks/questions.js";
 
-const inint = () => {
-  const settings = {
-    gameTime: 5,
-    errorCount: 3
-  };
+const gameSettings = {
+  gameTime: 5,
+  errorCount: 3
+};
+
+const inint = (gameQuestions) => {
+  const {errorCount, gameTime} = gameSettings;
 
   ReactDOM.render(
       <App
-        gameTime={settings.gameTime}
-        errorCount={settings.errorCount}
+        gameTime={gameTime}
+        errorCount={errorCount}
+        questions={gameQuestions}
       />,
       document.getElementById(`root`)
   );
 };
 
-inint();
+inint(questions);
